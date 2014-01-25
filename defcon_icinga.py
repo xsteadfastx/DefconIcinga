@@ -1,6 +1,5 @@
 import requests
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
@@ -19,9 +18,9 @@ def defcon():
         if i['SERVICE_CURRENT_STATE'] != '0':
             problems.append(i)
 
-    if len(i) == 0:
+    if len(problems) == 0:
         color = green
-    elif len(i) == 3:
+    elif 1 <= len(problems) <= 3:
         color = yellow
     else:
         color = red
