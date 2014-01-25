@@ -1,0 +1,16 @@
+<html>
+<header>
+	<meta http-equiv="refresh" content="60; URL=/">
+	<style type="text/css">
+		body { background-color:{{ background_color }}; }
+	</style>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</header>
+<body>
+<h1>DEFCON</h1>
+<p>{{ problems_len }}</p><br />
+{% for i in problems %}
+  {{ i['SERVICE_NAME'] }} on <strong>{{ i['HOST_NAME'] }}</strong><br />
+{% endfor %}
+</body>
+</html>
