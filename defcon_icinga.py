@@ -11,7 +11,9 @@ green = '#3aad2f'
 
 
 def defcon():
-    URL = 'http://127.0.0.1/icinga-web/web/api/service/filter/columns[SERVICE_NAME|HOST_NAME|SERVICE_CURRENT_STATE]/authkey=xyzxyzxyz/json'
+    HOST = '127.0.0.1'
+    AUTHKEY = 'xyzxyzxyz'
+    URL = 'http://%s/icinga-web/web/api/service/filter/columns[SERVICE_NAME|HOST_NAME|SERVICE_CURRENT_STATE]/authkey=%s/json' % (HOST, AUTHKEY)
     r = requests.get(URL)
     problems = []
     for i in r.json()['result']:
