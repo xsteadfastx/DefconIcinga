@@ -43,9 +43,8 @@ def defcon():
 
 
 def background_thread():
-    """Example of how to send server generated events to clients."""
     while True:
-        time.sleep(10)
+        time.sleep(60)
         defcon_json = defcon()
         socketio.emit('my response', defcon_json, namespace='/defcon')
 
