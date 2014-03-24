@@ -23,6 +23,8 @@ socketio = SocketIO(app)
 def defcon():
     colors = {'red': '#d9534f',
               'yellow': '#f0ad4e',
+              'darkblue': '#428bca',
+              'lightblue': '#5bc0de',
               'green': '#5cb85c'}
 
     r = requests.get(URL)
@@ -34,6 +36,10 @@ def defcon():
     if len(problems) == 0:
         color = colors['green']
     elif 1 <= len(problems) <= 3:
+        color = colors['lightblue']
+    elif 4 <= len(problems) <= 6:
+        color = colors['darkblue']
+    elif 7 <= len(problems) <= 9:
         color = colors['yellow']
     else:
         color = colors['red']
